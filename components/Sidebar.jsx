@@ -23,7 +23,7 @@ export function Sidebar() {
   return (
     <div>
       <div style={sidebarStyle}>
-        <ul style={{ listStyle: 'none', padding: 0 }}>
+        <ul style={{  display: 'flex', flexDirection: 'column'}}>
           <Link href="/dashboard/analytics">
             <li style={{ ...listItemStyle, ...(hoverStyle) }}>Analytics</li>
           </Link>
