@@ -28,9 +28,8 @@ const ExcelImport = ({ onTableDataChange, tableData: tableprop, file }) => {
 
   const ReadExcel = async (filename) => {
     try {
-      const apiUrl = filename
-      ? `https://sendflowchecking.vercel.app/api/getExcelFile?filename=${encodeURIComponent(filename)}`
-      : 'https://sendflowchecking.vercel.app/api/getExcelFile';
+      const apiUrl =  `https://sendflowchecking.vercel.app/api/getExcelFile?filename=${encodeURIComponent(filename)}`;
+     
     
       const response = await fetch(apiUrl, {
         method: "GET",
