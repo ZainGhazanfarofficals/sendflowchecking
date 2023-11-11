@@ -13,6 +13,7 @@ export function Sidebar() {
     padding: '10px',
     cursor: 'pointer',
     transition: 'background 0.3s',
+    display: 'block', // Set the display property to block
   };
 
   const hoverStyle = {
@@ -43,4 +44,3 @@ export function Sidebar() {
     </div>
   );
 }
-
