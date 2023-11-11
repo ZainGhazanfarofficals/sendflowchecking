@@ -25,7 +25,7 @@ export default function Campaigns() {
 
   const fetchData = async () => {
     try {
-      const apiUrl = `http://localhost:3000/api/campaign?variableName=${encodeURIComponent(mail)}`;
+      const apiUrl = `sendflowchecking.vercel.app/campaign?variableName=${encodeURIComponent(mail)}`;
       const response = await fetch(apiUrl, {
         method: "GET",
       });
