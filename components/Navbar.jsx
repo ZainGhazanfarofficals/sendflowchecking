@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { useEffect } from "react";
-
+import './Nav.css'
 export default function Navbar({ session }) {
   useEffect(() => {}, [session]);
 
