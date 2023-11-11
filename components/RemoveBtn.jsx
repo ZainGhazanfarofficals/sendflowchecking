@@ -1,8 +1,5 @@
-"use client";
-
 import { HiOutlineTrash } from "react-icons/hi";
 import { useRouter } from "next/navigation";
-
 
 // Delete Button Component to Delete Campaigns
 export default function RemoveBtn({ id, refreshData }) {
@@ -20,7 +17,7 @@ export default function RemoveBtn({ id, refreshData }) {
         });
 
         if (res.ok) {
-            refreshData();
+          refreshData();
         } else {
           console.error("Error deleting campaign:", res.statusText);
         }
@@ -31,7 +28,7 @@ export default function RemoveBtn({ id, refreshData }) {
   };
 
   return (
-    <button onClick={removeTopic} className="text-red-400">
+    <button onClick={removeTopic}>
       <HiOutlineTrash size={24} />
     </button>
   );

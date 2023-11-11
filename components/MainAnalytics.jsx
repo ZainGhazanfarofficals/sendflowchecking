@@ -1,4 +1,3 @@
-"use client"
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { Chart, ArcElement } from 'chart.js/auto';
 import axios from 'axios';
@@ -15,7 +14,7 @@ const MainAnalytics = () => {
   });
 
   const chartRef = useRef(null);
-// API Endpoint for Fetching all Analytics Data of All Campaigns that has been Sent... 
+
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
@@ -41,7 +40,6 @@ const MainAnalytics = () => {
     fetchAnalytics();
   }, [mail]);
 
-  // Setup Chart Data...
   const chartData = useMemo(() => {
     return {
       labels: ['Emails Sent', 'Emails Opened', 'Replies'],
@@ -59,28 +57,25 @@ const MainAnalytics = () => {
   }, [analyticsData]);
 
   useEffect(() => {
-    // Create and configure the chart when the component mounts or when analyticsData changes
     if (chartRef.current) {
       const ctx = chartRef.current.getContext('2d');
 
-      // Register the ArcElement
       Chart.register(ArcElement);
 
       const chart = new Chart(ctx, {
         type: 'doughnut',
-        data: chartData, // Use the memoized chartData here
+        data: chartData,
       });
 
       return () => {
-        // Cleanup chart instance when the component unmounts
         chart.destroy();
       };
     }
   }, [chartData]);
 
   return (
-    <div className="mt-4 flex justify-center items-center h-[58vh]">
-      <div className="mt-2 w-full max-w-[60vh]">
+    <div className="">
+      <div className="">
         <canvas ref={chartRef}></canvas>
       </div>
     </div>

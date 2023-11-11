@@ -2,8 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Chart, ArcElement } from 'chart.js/auto';
 import axios from 'axios';
 
-// Anlaytics of Each Sent Campaign....
-const Analytics = ({id , cid}) => {
+const Analytics = ({ id, cid }) => {
   const [analyticsData, setAnalyticsData] = useState({
     emailsSent: 0,
     emailsOpened: 0,
@@ -12,7 +11,6 @@ const Analytics = ({id , cid}) => {
 
   const chartRef = useRef(null);
 
-
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
@@ -20,7 +18,7 @@ const Analytics = ({id , cid}) => {
           console.log("No Campaign ID here in Analytics");
           return;
         }
-// API Endpoint to Fetch Analytics Data of Each Campaign...
+
         const response = await axios.get(`/api/analytics?id=${cid || id}`);
 
         if (response.status === 200) {
@@ -70,7 +68,7 @@ const Analytics = ({id , cid}) => {
   }, [analyticsData]);
 
   return (
-    <div className="mt-4 w-full max-w-[70vh] ml-50">
+    <div className="mt-4">
       <canvas ref={chartRef}></canvas>
     </div>
   );

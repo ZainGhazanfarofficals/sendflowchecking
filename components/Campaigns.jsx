@@ -1,4 +1,3 @@
-"use client"
 import React, { useState, useEffect, useMemo } from "react";
 import CreateCampaign from "./CreateCampaigns";
 import UpdateCampaign from "./EditCampaignForm";
@@ -6,11 +5,10 @@ import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 import { useSession } from "next-auth/react";
 
-//Parent Component of Create Campaign and Edit Campaign....
 export default function Campaigns() {
   const [createCampaigns, setCreateCampaigns] = useState(false);
   const [campaignData, setCampaignData] = useState([]);
-  const [selectedCampaign, setSelectedCampaign] = useState(null); // Added state for selected campaign
+  const [selectedCampaign, setSelectedCampaign] = useState(null);
   const [isEditClicked, setIsEditClicked] = useState(false);
 
   const [email, setEmail] = useState("");
@@ -23,8 +21,6 @@ export default function Campaigns() {
   const { data: user } = useSession();
   const mail = user?.user?.email;
 
-
-// API endpoint to fetch Campaign Data...
   const fetchData = async () => {
     try {
       const apiUrl = `http://localhost:3000/api/campaign?variableName=${encodeURIComponent(mail)}`;
@@ -53,12 +49,12 @@ export default function Campaigns() {
       !selectedCampaign && (
         <ul>
           {campaignData.map((campaign) => (
-            <li key={campaign._id} className="border p-4 my-2 flex justify-between items-center">
+            <li key={campaign._id}>
               <div>
-                <div className="font-bold text-xl">{campaign.subject}</div>
-                <div className="text-sm">{campaign.body.slice(0, 50)}...</div>
+                <div>{campaign.subject}</div>
+                <div>{campaign.body.slice(0, 50)}...</div>
               </div>
-              <div className="flex gap-2">
+              <div>
                 <RemoveBtn id={campaign._id} refreshData={fetchData} />
                 <button onClick={() => handleEditClick(campaign)}>
                   <HiPencilAlt size={24} />
@@ -69,12 +65,12 @@ export default function Campaigns() {
         </ul>
       )
     );
-  }, [campaignData, selectedCampaign]); 
+  }, [campaignData, selectedCampaign]);
 
   const handleEditClick = (campaign) => {
-    setSelectedCampaign(campaign); // Set the selected campaign data
-    setIsEditClicked(true); // Set isEditClicked to true
-    setCreateCampaigns(false); // Disable create button
+    setSelectedCampaign(campaign);
+    setIsEditClicked(true);
+    setCreateCampaigns(false);
   };
 
   return (
@@ -97,12 +93,9 @@ export default function Campaigns() {
       ) : (
         <>
           {!isEditClicked && (
-            <button
-            className="mb-6 ml-auto rounded-lg bg-black text-white hover:bg-gray-800 py-2 px-6"
-            onClick={() => setCreateCampaigns(true)}
-          >
-            Create Campaign
-          </button>
+            <button onClick={() => setCreateCampaigns(true)}>
+              Create Campaign
+            </button>
           )}
           {campaignList}
 

@@ -1,19 +1,18 @@
-import {loadStripe} from "@stripe/stripe-js"
+import { loadStripe } from "@stripe/stripe-js";
 
-
-export async function checkout({lineItems}) {
-    let stripePromise =null
-    const getstripe =()=>{
-        if(!stripePromise){
-            stripePromise =loadStripe(process.env.NEXT_PUBLIC_API_KEY)
+export async function checkout({ lineItems }) {
+    let stripePromise = null;
+    const getStripe = () => {
+        if (!stripePromise) {
+            stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY);
         }
-        return stripePromise
+        return stripePromise;
     }
-    const stripe =await getstripe()
+    const stripe = await getStripe();
     await stripe.redirectToCheckout({
-        mode:"subscription",
+        mode: "subscription",
         lineItems,
         successUrl: `${window.location.origin}?session_id={CHECKOUT_SESSION_ID}`,
-		cancelUrl: window.location.origin
-    })
+        cancelUrl: window.location.origin
+    });
 }

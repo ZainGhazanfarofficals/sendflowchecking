@@ -1,42 +1,34 @@
-import {
-  Card,
-  List,
-  ListItem,
-} from "@material-tailwind/react";
 import Link from 'next/link';
 
-export function Sidebar() 
-{
+export function Sidebar() {
+  const listItemStyle = {
+    padding: '10px',
+    cursor: 'pointer',
+    transition: 'background 0.3s',
+    '&:hover': {
+      background: '#e5e5e5',
+    },
+  };
 
   return (
-    <Card className="h-[calc(70vh-2rem)] w-full max-w-[20rem] p-4 shadow-2xl shadow-blue-gray-900 border-primary mt-40 ml-10">
-      <List className="gap-8 p-12">
+    <div style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', padding: '16px', background: '#fff' }}>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
         <Link href="/dashboard/analytics">
-       
-            <ListItem >Analytics</ListItem>
-
+          <li style={listItemStyle}>Analytics</li>
         </Link>
-        <Link  href="/dashboard/accounts">
-        
-            <ListItem >Accounts</ListItem>
-          
+        <Link href="/dashboard/accounts">
+          <li style={listItemStyle}>Accounts</li>
         </Link>
         <Link href="/dashboard/campaigns">
-      
-            <ListItem >Campaigns</ListItem>
-      
+          <li style={listItemStyle}>Campaigns</li>
         </Link>
         <Link href="/dashboard/mailbox">
-    
-            <ListItem >Mailbox</ListItem>
-        
+          <li style={listItemStyle}>Mailbox</li>
         </Link>
         <Link href="/dashboard/settings">
-
-            <ListItem >Settings</ListItem>
-
+          <li style={listItemStyle}>Settings</li>
         </Link>
-      </List>
-    </Card>
+      </ul>
+    </div>
   );
 }

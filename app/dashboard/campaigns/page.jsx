@@ -1,11 +1,12 @@
-"use client"
 import Campaigns from "@/components/Campaigns";
 
 function CampaignPage() {
-  return( 
+  return (
     <div>
-    <h1 className="text-3xl font-bold flex justify-center">Campaigns</h1>
-    <Campaigns />
+      <h1 style={{ fontSize: "1.875rem", fontWeight: "bold", display: "flex", justifyContent: "center" }}>
+        Campaigns
+      </h1>
+      <Campaigns />
     </div>
   );
 }

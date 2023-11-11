@@ -10,7 +10,6 @@ const Mailbox = () => {
   const mail = user?.user?.email;
 
   useEffect(() => {
-    // API Endpoint for Fetching email replies from your server
     const fetchReplies = async () => {
       try {
         const response = await axios.get('/api/incomingEmail', {
@@ -52,28 +51,26 @@ const Mailbox = () => {
       {selectedReply ? (
         <div>
           <button
-            className="mb-10 rounded-lg bg-black text-white hover:bg-gray-800 py-2 px-4"
             onClick={handleCloseReply}
           >
             Back to Replies
           </button>
-          <div className="border p-4 my-4">
+          <div>
             <strong>From: {selectedReply.senderEmail}</strong>
             <p>To: {selectedReply.recipients}</p>
             <strong>Message:</strong>
-            <div className="pl-4">{formatMessage(selectedReply.content)}</div>
+            <div>{formatMessage(selectedReply.content)}</div>
           </div>
         </div>
       ) : (
         <ul>
           {replies.map((reply, index) => (
-            <li className="border p-4 my-4" key={index}>
+            <li key={index}>
               <strong>From: {reply.senderEmail}</strong>
               <p>To: {reply.recipients}</p>
               <strong>Message:</strong>
-              <div className="pl-4">{formatMessage(reply.content)}</div>
+              <div>{formatMessage(reply.content)}</div>
               <button
-                className="text-blue-700 font-bold"
                 onClick={() => handleReplyClick(reply)}
               >
                 Read More
