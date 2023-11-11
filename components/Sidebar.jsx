@@ -5,7 +5,7 @@ export function Sidebar() {
     width: '250px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
     padding: '16px',
-    background: '#fff',
+    margin:'10px',
     height: '100vh', // Adjust the height as needed
   };
 
