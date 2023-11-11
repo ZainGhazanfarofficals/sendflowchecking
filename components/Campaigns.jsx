@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState, useEffect, useMemo } from "react";
 import CreateCampaign from "./CreateCampaigns";
 import UpdateCampaign from "./EditCampaignForm";

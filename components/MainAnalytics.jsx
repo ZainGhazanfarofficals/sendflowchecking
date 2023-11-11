@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useEffect, useState, useRef, useMemo } from 'react';
 import { Chart, ArcElement } from 'chart.js/auto';
 import axios from 'axios';
