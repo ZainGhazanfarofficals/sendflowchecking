@@ -1,27 +1,56 @@
-/* DashboardLayout.module.css */
+/* layout.css */
 
-.contentStyle  {
-  margin-left: '250px';
-  padding : '16px';
-};
+/* Define your global styles here */
 
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Adjust the font family as needed */
+  background-color: #f0f0f0; /* Adjust the background color as needed */
+}
+
+/* Define the styles for the dashboard container */
 .dashboardContainer {
-    display: flex;
-  }
-  
-  .cardContainer {
-    flex-grow: 1; /* Take up remaining space in the container */
-    padding: 16px; /* Adjust the padding as needed */
-  }
-  
-  .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cardBody {
-    padding: 16px;
-  }
-  
+  display: flex;
+}
+
+/* Define the styles for the sidebar */
+.sidebar {
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  background: #fff;
+  height: 100vh; /* Adjust the height as needed */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sidebar li:hover {
+  background: #e5e5e5;
+}
+
+/* Define the styles for the card container */
+.cardContainer {
+  flex: 1;
+  padding: 16px;
+}
+
+/* Define the styles for the card */
+.card {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cardBody {
+  padding: 16px;
+}
+
+/* Define any other styles you may need for your layout */
