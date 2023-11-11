@@ -1,5 +1,10 @@
 /* DashboardLayout.module.css */
 
+.contentStyle  {
+  margin-left: '250px';
+  padding : '16px';
+};
+
 .dashboardContainer {
     display: flex;
   }
