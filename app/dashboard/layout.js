@@ -7,12 +7,12 @@ export default function DashboardLayout({
   setCampaignsKey,
 }) {
   return (
-    <section className={dashboardContainer}>
+    <section className="dashboardContainer">
       <Sidebar setSidebarTitle={setSidebarTitle} setCampaignsKey={setCampaignsKey} />
 
-      <div className={cardContainer}>
-        <div className={card}>
-          <div className={cardBody}>
+      <div className="cardContainer">
+        <div className="card">
+          <div className="cardBody">
             {children}
           </div>
         </div>
