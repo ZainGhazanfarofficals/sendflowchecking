@@ -20,8 +20,8 @@ export default function Navbar({ session }) {
               <Image
                 src="https://res.cloudinary.com/dpkkaacjk/image/upload/v1693990468/text-1674847270073_gshlaz.png"
                 alt="Send Flow"
-                width={200}
-                height={200}
+                width='100%'
+                height='50%'
               />
             </span>
           </div>
