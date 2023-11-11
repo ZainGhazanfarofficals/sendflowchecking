@@ -1,7 +1,6 @@
 import path from 'path';
 import fs from 'fs';
 import { parse } from 'url';
-import XLSX from 'xlsx';
 
 const uploadDir = path.join(process.cwd(), 'public/uploads');
 
