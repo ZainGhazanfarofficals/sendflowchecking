@@ -1,0 +1,22 @@
+/* DashboardLayout.module.css */
+
+.dashboardContainer {
+    display: flex;
+  }
+  
+  .cardContainer {
+    flex-grow: 1; /* Take up remaining space in the container */
+    padding: 16px; /* Adjust the padding as needed */
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cardBody {
+    padding: 16px;
+  }
+  

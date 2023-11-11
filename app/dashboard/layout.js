@@ -1,4 +1,5 @@
 import { Sidebar } from "@/components/Sidebar";
+import "./layout.css";
 
 export default function DashboardLayout({
   children,
@@ -6,11 +7,15 @@ export default function DashboardLayout({
   setCampaignsKey,
 }) {
   return (
-    <section className="flex">
+    <section className={dashboardContainer}>
       <Sidebar setSidebarTitle={setSidebarTitle} setCampaignsKey={setCampaignsKey} />
 
-      <div className="container">
-        {children}
+      <div className={cardContainer}>
+        <div className={card}>
+          <div className={cardBody}>
+            {children}
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -9,10 +9,7 @@ export function Sidebar() {
     height: '100vh', // Adjust the height as needed
   };
 
-  const contentStyle = {
-    marginLeft: '250px', // Should match the width of the sidebar
-    padding: '16px',
-  };
+
 
   const listItemStyle = {
     padding: '10px',
