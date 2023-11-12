@@ -45,7 +45,7 @@ export default function Navbar({ session }) {
             </div>
           </div>
         ) : (
-          <Link href="/login">Get Started</Link>
+          <Link className="buttonlink" href="/login">Get Started</Link>
         )}
       </div>
       <div>
